@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  /* background-color: #282c34; */
+  
 }
 .App-link {
   color: #61dafb;
@@ -8,9 +8,9 @@
 
 .add {
   border: 3px solid rgb(4, 41, 93);
-  margin: 10px ;
-  padding: 15px ;
-  width: 300px ;
+  margin: 30px ;
+  padding: 5px ;
+  width: 500px ;
   flex-wrap: wrap;
   box-shadow: 0px 0px 10px rgb(4, 41, 93) ;
   display: inline-table ;

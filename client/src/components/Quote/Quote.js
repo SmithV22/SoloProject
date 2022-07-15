@@ -27,17 +27,17 @@ const Quote = () => {
         !quotes.length ? <CircularProgress /> : (
             <Grid className={ classes.container } container alignItems='stretch' spacing={3}>
                 { quotes.map((quote) => (
-                    <Grid item xs={12} sm={6}>
-                            <CardContent >
+                    <Grid key={quote._id} item xs={12} sm={6} style={{ background: '#fff' }}>
+                        <CardContent style={{ background: '#53a9bc' }}>
                             <IconButton aria-label="Example" href={`/quote/update/${quote._id}`}>
-                                <MoreHorizIcon fontSize='default' />
+                                <MoreHorizIcon fontSize='medium' />
                             </IconButton>
                                 <Typography className={ classes.title } variant='body1' gutterBottom>Words by: { quote.author }</Typography>
                                 </CardContent>
-                            <CardContent>
-                                <Typography variant='h5' color='textBold' component='p'> { quote.quote }</Typography>
+                            <CardContent style={{ background: '#D4EBEE' }}>
+                                <Typography variant='h5' color='primary' component='p'> { quote.quote }</Typography>
                             </CardContent>
-                        <Card key={ quote.id }>
+                        <Card key={ quote._id }>
                             <CardContent>
                                 <Typography variant='body2' color='textSecondary' component='p'>Source: { quote.source }</Typography>
                             </CardContent>

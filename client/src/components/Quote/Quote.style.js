@@ -5,6 +5,8 @@ export default makeStyles((theme) => ({
     mainContainer: {
         display: 'flex',
         alignItems: 'center',
+        
+        
     },
     smMargin: {
         margin: theme.spacing(1),
@@ -12,15 +14,8 @@ export default makeStyles((theme) => ({
     actionDiv: {
         textAlign: 'center',
     },
-    media: {
-        height: 0,
-        paddingTop: '56.25%',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        backgroundBlendMode: 'darken',
-    },
-    border: {
-        border: 'solid',
-    },
+    
+
     fullHeightCard: {
         height: '100%',
     },
@@ -31,6 +26,8 @@ export default makeStyles((theme) => ({
         borderRadius: '15px',
         height: '100%',
         position: 'relative',
+        
+        
     },
     overlay: {
         position: 'absolute',
@@ -46,6 +43,8 @@ export default makeStyles((theme) => ({
     },
     grid: {
         display: 'flex',
+        margin: '5px 2px',
+        
     },
     details: {
         display: 'flex',
@@ -60,5 +59,5 @@ export default makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
     },
-    
+
 })) ;

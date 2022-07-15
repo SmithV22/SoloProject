@@ -9,7 +9,7 @@ const Navbar = () => {
     const classes = useStyles() ;
     return (
         <div>
-            <AppBar position='static'>
+            <AppBar position='static' maxWidth style={{ background: '#252C6F' }}>
                 <Toolbar >
                     <IconButton size='medium' edge='start' color='inherit' aria-label='logo'>
                     <img className={ classes.imgage } component={ Link } to ='/' src={ Neia } alt='memories' height='60' />
@@ -18,8 +18,8 @@ const Navbar = () => {
                 </Toolbar>
             </AppBar>
             <div className={ classes.links}>
-                <Typography className={ classes.link} component={ Link } to ='/' variant='body2'>Home |</Typography>
-                <Typography className={ classes.link} component={ Link } to ='/journal' variant='body2'>Journals |</Typography>
+                <Typography className={ classes.link} component={ Link } to ='/' variant='body2'> Home </Typography>
+                <Typography className={ classes.link} component={ Link } to ='/journal' variant='body2'>Journals </Typography>
                 <Typography className={ classes.link} component={ Link } to ='/quote/add' variant='body2'>Add Quote</Typography>
             </div>
         </div>

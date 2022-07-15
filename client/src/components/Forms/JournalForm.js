@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react' ;
 import axios from 'axios' ;
 import { useParams } from 'react-router-dom' ;
-import { ObjectId} from 'mongoose';
 
 import Form from 'react-bootstrap/Form' ;
 import Button from 'react-bootstrap/Button' ;
@@ -11,7 +10,7 @@ import { Box, Typography } from '@material-ui/core' ;
 
 const JournalForm = (props ) => {
 
-    const { quoteId } = (useParams()) ;
+    const { id } = (useParams()) ;
     
     const { oldJournal } = props ;
     const [ errors, setErrors ] = useState({}) ;
@@ -21,12 +20,12 @@ const JournalForm = (props ) => {
         props.oldJournal || {
         entry: '',
         writtenBy: '',
-        quoted: quoteId ,
+        quoted: id ,
     }) ;
     
     
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/quotes/${quoteId}`)
+        axios.get(`http://localhost:8000/api/quotes/${id}`)
         .then((res) => {
             console.log(res.data) ;
             setQuote(res.data) ;
@@ -34,7 +33,7 @@ const JournalForm = (props ) => {
         .catch((err) => {
             console.log("Error from DETAILS", err)
         })
-    }, []) ;
+    }, [id]) ;
     
     
     useEffect(()=> {
@@ -55,12 +54,12 @@ const JournalForm = (props ) => {
 
     return (
         <div className="container">
-            <Box>
+            <Box >
                 <Typography>{ quote.author}</Typography>
-                <Typography>{ quote.quote}</Typography>
+                <Typography color='primary'>{ quote.quote}</Typography>
             </Box>
         <div className="add">
-            <Form onSubmit={submitHandler} className="addForm">
+            <Form onSubmit={submitHandler} className="addForm" style={{ background: '#D4EBEE' }}>
                 <Form.Group>
                     <Form.Control type = 'hidden' name='quoted' value={  journal.quoted } onChange={changeHandler}/>
                 </Form.Group>

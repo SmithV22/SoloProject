@@ -32,21 +32,21 @@ const QuoteForm = (props ) => {
     return (
         <div className="container">
         <div className="add">
-            <Form onSubmit={submitHandler} className="addForm">
+            <Form onSubmit={submitHandler} className="addForm"  >
                 <Form.Group className="mb-3">
                 { errors.quote && <p className="error">{ errors.quote.message }</p> }
                 <Form.Label>Quote</Form.Label>
-                <Form.Control as='textarea' rows={3} name="quote" value={quote.quote} onChange={changeHandler} />
+                <Form.Control as='textarea' rows={3} name="quote" value={quote.quote} onChange={changeHandler} style={{ background: '#D4EBEE' }} />
                 </Form.Group>
                 <Form.Group className="mb-3">
                     { errors.author && <p className="error">{ errors.author.message }</p> }
                     <Form.Label>Author</Form.Label>
-                    <Form.Control type="text" name="author" value={quote.author} onChange={changeHandler} />
+                    <Form.Control type="text" name="author" value={quote.author} onChange={changeHandler} style={{ background: '#D4EBEE' }} />
                 </Form.Group>
                 <Form.Group className="mb-3">
                     { errors.source && <p className="error">{ errors.source.message }</p> }
                     <Form.Label>Source</Form.Label>
-                    <Form.Control type="text" name="source" value={quote.source} onChange={changeHandler} />
+                    <Form.Control type="text" name="source" value={quote.source} onChange={changeHandler} style={{ background: '#D4EBEE' }} />
                 </Form.Group>
                 
                 <Button variant="primary" type="submit"> {props.buttonText}

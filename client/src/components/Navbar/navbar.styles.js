@@ -3,8 +3,8 @@ import { makeStyles } from "@material-ui/core";
 
 export default makeStyles((theme) => ({
     appBar: {
-        borderRadius: 10,
-        margin: '20px',
+        borderRadius: 15,
+        margin: '20px, 0',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -25,13 +25,21 @@ export default makeStyles((theme) => ({
     heading: {
         textDecoration: 'none',
         marginLeft: '4em',
-        color: '#00c8c7'
+        color: '#53a9bc'
     },
     links: {
         textAlign: 'center',
-        textDecoration: 'none',
+        marginBottom: '40px'
     },
     link: {
-        marginRight: '10px'
+        marginRight: '10px',
+        textDecoration: 'none',
+        padding: '4px',
+        borderRadius: '5px',
+        
+        color: '##252C6F',
+        '&:hover': {
+            backgroundColor: '#fff',
+            color: '#3c52b2', }
     }
 })) ;
