@@ -41,7 +41,7 @@ const JournalUpdate = () => {
         <div>
             <h3>Edit Journal</h3>
             <div>
-                <JournalForm submitHandler={ submitHandler } buttonText={'Edit Quote'} oldJournal={ oldJournal } />
+                <JournalForm submitHandler={ submitHandler } buttonText={'Edit Journal'} oldJournal={ oldJournal } />
             </div>
         </div>
     ) : null ;

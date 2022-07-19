@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin: 0, auto ;
   
 }
 .App-link {
@@ -9,11 +10,12 @@
 .add {
   border: 3px solid rgb(4, 41, 93);
   margin: 30px ;
-  padding: 5px ;
+  padding: 15px ;
   width: 500px ;
   flex-wrap: wrap;
   box-shadow: 0px 0px 10px rgb(4, 41, 93) ;
   display: inline-table ;
+  
 }
 
 .link-text {
@@ -60,3 +62,5 @@ padding: 5px;
 .details {
 font-weight: bold;
 }
+
+

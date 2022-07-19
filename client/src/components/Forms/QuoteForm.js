@@ -35,21 +35,26 @@ const QuoteForm = (props ) => {
             <Form onSubmit={submitHandler} className="addForm"  >
                 <Form.Group className="mb-3">
                 { errors.quote && <p className="error">{ errors.quote.message }</p> }
-                <Form.Label>Quote</Form.Label>
-                <Form.Control as='textarea' rows={3} name="quote" value={quote.quote} onChange={changeHandler} style={{ background: '#D4EBEE' }} />
+                <Form.Label style={{ fontSize: '20px' }}>Quote</Form.Label>
+                <Form.Control as='textarea' rows={3} name="quote" value={quote.quote} onChange={changeHandler} />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                    { errors.author && <p className="error">{ errors.author.message }</p> }
-                    <Form.Label>Author</Form.Label>
-                    <Form.Control type="text" name="author" value={quote.author} onChange={changeHandler} style={{ background: '#D4EBEE' }} />
+                    { errors.author && <p className="error">{ errors.authorFirstName.message }</p> }
+                    <Form.Label style={{ fontSize: '20px' }}>Author First Name</Form.Label>
+                    <Form.Control type="text" name="authorFirstName" value={quote.authorFirstName} onChange={changeHandler}  />
+                </Form.Group>
+                <Form.Group className="mb-3">
+                    { errors.authorLastName && <p className="error">{ errors.authorLastName.message }</p> }
+                    <Form.Label style={{ fontSize: '20px' }}>Author Last Name</Form.Label>
+                    <Form.Control type="text" name="authorLastName" value={quote.authorLastName} onChange={changeHandler}  />
                 </Form.Group>
                 <Form.Group className="mb-3">
                     { errors.source && <p className="error">{ errors.source.message }</p> }
-                    <Form.Label>Source</Form.Label>
-                    <Form.Control type="text" name="source" value={quote.source} onChange={changeHandler} style={{ background: '#D4EBEE' }} />
+                    <Form.Label style={{ fontSize: '20px' }}>Source</Form.Label>
+                    <Form.Control type="text" name="source" value={quote.source} onChange={changeHandler} />
                 </Form.Group>
                 
-                <Button variant="primary" type="submit"> {props.buttonText}
+                <Button style={{ backgroundColor: "#252C6F", color: '#fff' }} type="submit"> {props.buttonText}
                 </Button>
             </Form>
         </div>

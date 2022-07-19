@@ -55,11 +55,33 @@ export default makeStyles((theme) => ({
     },
     title: {
         padding: '0 16px',
+    
     },
     cardActions: {
         padding: '0 16px 8px 16px',
         display: 'flex',
         justifyContent: 'center',
+        
     },
-    
+    button: {
+        background: "#252C6F", 
+        color: '#fff',
+    },
+    heading: {
+        height: '100px',
+        textAlign: 'center',
+        
+    },
+    journalTitle: {
+        fontSize: '45px',
+        fontFamily: 'arial',
+        fontWeight: 'bold',
+    },
+    fontQuote: {
+        fontFamily: 'times new roman',
+        fontStyle: 'italic',
+    },
+    font: {
+        fontFamily: 'times new roman'
+    }
 })) ;

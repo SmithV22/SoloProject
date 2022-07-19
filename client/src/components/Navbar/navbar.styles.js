@@ -7,7 +7,6 @@ export default makeStyles((theme) => ({
         margin: '20px, 0',
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between',
         alignItems: 'center',
         padding: '10px',
         
@@ -24,22 +23,27 @@ export default makeStyles((theme) => ({
     },
     heading: {
         textDecoration: 'none',
+        display: 'flex',
+        justifyContent: 'center',
         marginLeft: '4em',
-        color: '#53a9bc'
+        color: '#53a9bc',
+        fontFamily: 'georgia',
     },
     links: {
         textAlign: 'center',
-        marginBottom: '40px'
+        marginBottom: '20px'
     },
     link: {
         marginRight: '10px',
         textDecoration: 'none',
         padding: '4px',
         borderRadius: '5px',
+        fontSize: '17px',
         
         color: '##252C6F',
         '&:hover': {
-            backgroundColor: '#fff',
+            backgroundColor: '#53a9bc',
             color: '#3c52b2', }
-    }
+    },
+    
 })) ;

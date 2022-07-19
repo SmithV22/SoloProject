@@ -12,6 +12,7 @@ const Journal = () => {
     const navigate = useNavigate() ;
     const [ journals, setJournals ] = useState([]) ;
     const classes = useStyles() ;
+
     useEffect(() => {
         axios.get('http://localhost:8000/api/journals')
         
@@ -40,25 +41,27 @@ const Journal = () => {
 
     return (
         !journals.length ? <CircularProgress /> : (
+        <div>
+            <Box className={ classes.heading }>
+                <Typography className={classes.journalTitle}>Journals</Typography>
+            </Box>
             <Grid className={ classes.container } container alignItems='stretch' spacing={3}>
                 { journals.map((journal) => (
                     <Grid key={ journal._id }item xs={12} sm={6}  >
                         <Box p={5} >
                             <Paper > 
-                                <Box p={5}  style={{ background: '#53a9bc' }}>
-                                <IconButton aria-label="Example" href={`/journal/${journal._id}`}>
+                                <Box style={{ background: '#53a9bc', paddingBottom: '10px' }}>
+                                <IconButton aria-label="Example" href={`/journal/${journal._id}/update`}>
                                     <MoreHorizIcon fontSize='medium' />
                                 </IconButton>
-                                    <Typography className={ classes.title } variant='body1' gutterBottom>Words by: <span color='primary'>{ journal?.quoted?.author  }</span></Typography>
-                                    <Typography variant='h5'> Quote: </Typography>
-                                    <Typography variant='h5'color='primary'  component='p'> { journal?.quoted?.quote}</Typography>
+                                    <Typography variant='h5'  component='p' className={ classes.fontQuote }> { journal?.quoted?.quote}</Typography>
+                                    <Typography className={ classes.title } variant='body1' color='textSecondary' gutterBottom>Words by: { journal?.quoted?.authorFirstName  } {journal?.quoted?.authorLastName} </Typography>
                                 </Box>
-                                <Box p={5} style={{ background: '#D4EBEE' }}>
-                                    <Typography variant='h5'> Journal Entry: </Typography>
-                                    <Typography variant='h5'> { journal.entry }  </Typography>
+                                <Box  style={{ background: '#D4EBEE', padding: '5px' }}>
+                                    <Typography variant='h5' color='primary' fontWeight='bold'> Journal Entry: </Typography>
+                                    <Typography variant='h5' style={{  paddingBottom: '10px' }} className={ classes.font }> { journal.entry }  </Typography>
                                     <CardActions className={ classes.cardActions }>
-                                        <Button size='small' color='primary' variant='contained' href={`/journal/${journal._id}/update`}> Edit </Button>
-                                        <Button onClick={() => deleteHandler(journal._id)} size='small' color='primary' variant='contained' > Delete </Button>
+                                        <Button onClick={() => deleteHandler(journal._id)} className={ classes.button } size='small' color='primary' variant='contained' > Delete </Button>
                                     </CardActions>
                                 </Box>
                             </Paper>
@@ -66,7 +69,8 @@ const Journal = () => {
                     </Grid>
                 ))}     
             </Grid>
+        </div>
         )) ;
-}
+    }
 
 export default Journal ;

@@ -5,8 +5,6 @@ export default makeStyles((theme) => ({
     mainContainer: {
         display: 'flex',
         alignItems: 'center',
-        
-        
     },
     smMargin: {
         margin: theme.spacing(1),
@@ -26,8 +24,6 @@ export default makeStyles((theme) => ({
         borderRadius: '15px',
         height: '100%',
         position: 'relative',
-        
-        
     },
     overlay: {
         position: 'absolute',
@@ -44,7 +40,6 @@ export default makeStyles((theme) => ({
     grid: {
         display: 'flex',
         margin: '5px 2px',
-        
     },
     details: {
         display: 'flex',
@@ -59,5 +54,32 @@ export default makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
     },
-
+    randomQuote: {
+        justifyContent: 'center',
+        padding: '10px',
+        marginBottom: '30px',
+        fontFamily: 'times new roman',
+        fontStyle: 'italic',
+        fontSize: '25px'
+    },
+    button: {
+        background: "#252C6F", 
+        color: '#fff',
+    },
+    font: {
+        fontFamily: 'times new roman',
+        fontStyle: 'italic',
+    },
+    display: {
+        marginBottom: '25px',
+    },
+    container: {
+        marginTop: '20px',
+    },
+    displayTitle: {
+        fontSize: '45px',
+        fontFamily: 'arial',
+        fontWeight: 'bold',
+    },
 })) ;
+
