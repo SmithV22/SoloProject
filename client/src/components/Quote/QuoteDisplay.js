@@ -20,16 +20,13 @@ const QuoteDisplay = () => {
     useEffect(() => {
         axios.get('http://localhost:8000/api/quotes') 
         .then((res) => {
-                setQuotes(res.data)
-                console.log(authorLastName + '  authorLastName display') ;
-                console.log(quote.authorLastName + '  quote authorLastName display') ;
+            setQuotes(res.data)
+            console.log(authorLastName + '  authorLastName display') ;
         })
         .catch((err) => {
-            
             console.log('ERROR from Author Search') ;
         })
     }, []) ;
-    
     
     return (
         !quotes?.length ? <CircularProgress /> : (
@@ -61,6 +58,7 @@ const QuoteDisplay = () => {
                         </Card>
                     </Paper>    
                     </Grid>
+                    
                 ): null )} 
             </Grid>
             

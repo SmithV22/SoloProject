@@ -29,10 +29,11 @@ const SearchBar = ( props) => {
     const onSearch = (searchTerm) => {
         setValue(searchTerm);
         navigate(`/quote/${searchTerm}`) ;
-        
+        console.log('upper' + searchTerm.toUpperCase) ;
+        console.log('lower' + searchTerm.toLowerCase) ;
         console.log("search ", searchTerm);
     };
-
+    // const uniqueLastName = value.from(new Set(value)) ;
 
     return (
         <div className={ classes.searchContainer }>
@@ -44,13 +45,19 @@ const SearchBar = ( props) => {
                 {
                     data.filter((quote) => {
                         const searchTerm = value.toLowerCase();
-                        const authorLastName = quote.authorLastName.toLowerCase();
+                        const authorLastName = quote.authorLastName.toLowerCase() ;
 
-                        return (
-                            searchTerm &&
-                            authorLastName.startsWith(searchTerm) &&
-                            authorLastName !== searchTerm
-                        );
+                        // return (
+                            // searchTerm &&
+                            // authorLastName.startsWith(searchTerm) &&
+                            // authorLastName !== searchTerm
+                            if(authorLastName.toUpperCase() === searchTerm || authorLastName.toLowerCase() === searchTerm) {
+                                return (
+                                searchTerm &&
+                                authorLastName.startsWith(searchTerm) &&
+                                authorLastName !== searchTerm
+                            )} 
+                        // );
                     })
                     .slice(0, 10)
                     .map((quote) => (

@@ -39,7 +39,7 @@ const QuoteForm = (props ) => {
                 <Form.Control as='textarea' rows={3} name="quote" value={quote.quote} onChange={changeHandler} />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                    { errors.author && <p className="error">{ errors.authorFirstName.message }</p> }
+                    { errors.authorLastName && <p className="error">{ errors.authorFirstName.message }</p> }
                     <Form.Label style={{ fontSize: '20px' }}>Author First Name</Form.Label>
                     <Form.Control type="text" name="authorFirstName" value={quote.authorFirstName} onChange={changeHandler}  />
                 </Form.Group>
